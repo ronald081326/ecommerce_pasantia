@@ -1,0 +1,12 @@
+@if (isValidAccess) {
+  <div class="flex flex-col items-center justify-center mt-20">
+    <fa-icon class="text-green-600" [icon]="['far', 'circle-check']" size="5x"></fa-icon>
+    <div class="font-bold text-2xl">Gracias por tu pedido</div>
+    <div>Recibirás un correo de confirmación en breve</div>
+  </div>
+} @else {
+  <div class="flex flex-col items-center justify-center">
+    <div class="font-bold text-2xl">Sesión del carrito inválida</div>
+    <div>Por favor, inténtalo de nuevo</div>
+  </div>
+}

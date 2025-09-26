@@ -1,0 +1,26 @@
+<div class="grid grid-cols-3">
+  <div></div>
+  <form id="createForm" (ngSubmit)="create()" [formGroup]="createForm">
+    <h1 class="text-lg font-bold">Crear nueva categoría</h1>
+    <label class="form-control w-full">
+      <div class="label">
+        <span class="label-text">Nombre</span>
+      </div>
+      <input type="text" placeholder="Escribe el nombre aquí" class="input input-bordered w-full"
+      formControlName="name" [class.input-error]="name.invalid && !name.untouched"/>
+      <div class="label">
+        <span class="label-text-alt text-red-600" *ngxControlError="name; track: 'required'">
+          El nombre es obligatorio
+        </span>
+      </div>
+    </label>
+    <button type="submit" class="btn btn-primary btn-wide w-full"
+    [disabled]="createForm.invalid">
+      @if(loading) {
+        <span class="loading loading-spinner"></span>
+      }
+      Crear categoría
+    </button>
+  </form>
+  <div></div>
+</div>
